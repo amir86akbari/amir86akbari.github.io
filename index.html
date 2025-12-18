@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plastic container store</title>
+    <style>
+        /*@font-face{
+            font-family: 'Vazirmatn';
+            src: url('fonts/Vasirmatn.ttf') format('truetype');
+        }*/
+        body{
+            /*background-color: #e0f2ff;*/    /*آبی*/
+            /*background: linear-gradient(135deg, #d4a574 0%, #c89960 100%);   /*نارنجی*/
+            background: linear-gradient(135deg, #fdf8f3 0%, #f9f4ee 100%); 
+            font-family: 'Vazirmatn', sans-serif;
+        }
+        .logo{
+            font-size: 1.5rem;
+             font-weight: 700;
+            color: #d4a574;
+        }
+        .logo2{
+            font-size: 0.85rem;
+            color: #7f8c8d;
+            font-weight: 300;
+        }
+        .header{
+            background: linear-gradient(135deg, #f5f0e8 0%, #faf8f5 100%);
+            padding: 1.5rem 2rem;
+            box-shadow: 0 2px 10px rgb(0 0 0 / 5%);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-contact{
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        nav{
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        nav a{
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+        button{
+            background: linear-gradient(135deg, #d4a574 0%, #c89960 100%);
+            border: none;
+            padding: 15px;
+            border-radius: 50px;
+            font-family: 'Vazirmatn', sans-serif;
+            color: white;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 15px;
+        }
+        button:hover{
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgb(212 165 116 / 30%);
+        }
+        .product-card{
+            background-color: #faf8f5;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid #f0ede6;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .product-grid{
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .product-icon{
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, #d4a574 0%, #c89960 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+        }
+        .product-card:hover{
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgb(0 0 0 / 8%);
+            
+        }
+        .about-section{
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #f5f0e8 0%, #faf8f5 100%);
+        }
+        .about-content{
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .certifications{
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        .cert-badge{
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            border: 2px solid #d4a574;
+            font-weight: 600;
+            color: #d4a574;
+            background: #faf8f5;
+        }
+        .contact-section{
+            padding: 4rem 2rem;
+            background: white;
+        }
+        .contact-form{
+            background: linear-gradient(135deg, #fdf8f3 0%, #f9f4ee 100%);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgb(0 0 0 / 5%);
+        }
+        .form-group label{
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        .form-group input, .form-group textarea{
+            width: 100%;
+            padding: 0.9rem;
+            border: 2px solid #f0ede6;
+            border-radius: 8px;
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 0.95rem;
+        }
+        .form-group input:focus, .form-group textarea:focus{
+            outline: none;
+            border-color: #d4a574;
+            transition: border-color 0.6s;
+        }
+        .submit-button{
+            background: linear-gradient(135deg, #d4a574 0%, #c89960 100%);
+            color: white;
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            
+            cursor: pointer;
+            width: 100%;
+            font-family: 'Vazirmatn', sans-serif;
+            
+        }
+        .submit-button:hover{
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body style="font-family: 'Vazirmatn', sans-serif;">
+<header class="header" style="padding: 1.5rem 2rem;">
+<div class="header-contact">
+    <div>
+        <div class="logo">پک پلاست</div>
+        <div class="logo2">تولید کننده ظروف تخصصی بسته‌بندی</div>
+    </div>
+    <nav>
+        <a href="#home">صفحه اصلی</a>
+        <a href="#mahsoolat">محصولات</a>
+        <a href="#about" class="about-us">درباره ما</a>
+        <a href="#contact">تماس با ما</a>
+    </nav>
+</div>
+</header>
+<div id="home" style="text-align: center;padding: 70px;">
+    <h1 style="color: #2c3e50;">ظروف پلاستیکی با کیفیت برای بسته‌بندی شیرینی و کیک</h1>
+    <p style="color: #555;">تولید کننده حرفه‌ای ظروف تخصصی قنادی با بهترین کیفیت و قیمت مناسب</p>
+    <a href="#mahsoolat"><button>مشاهده محصولات</button></a>
+</div>
+<br>
+<section id="mahsoolat" style="background-color: white;padding: 4rem 2rem;">
+<h2 style="text-align: center;font-weight: 700;font-size: 30px;color: #2c3e50;">فروشگاه آنلاین</h2>
+<div class="product-grid">
+    <div class="product-card">
+        <div class="product-icon">🎂</div>
+        <h3>ظروف بسته‌بندی کیک</h3>
+        <p>انواع ظروف شفاف و رنگی برای انواع کیک ها با سایزهای متنوع</p>
+       <a href="mahsoolat1.html"> <BUtton>مشاهده محصولات</BUtton></a>
+    </div>
+    <div class="product-card">
+        <div class="product-icon">🍰</div>
+        <h3>ظروف شیرینی</h3>
+        <p>ظروف مخصوص شیرینی‌های خشک و تر با طراحی زیبا و استاندارد بهداشتی</p>
+        <a href="mahsoolat2.html"><button>مشاهده محصولات</button></a>
+    </div>
+    <div class="product-card">
+        <div class="product-icon">🧁</div>
+        <h3>ظروف کاپ کیک</h3>
+        <p>ظروف فانتزی و شیک برای کاپ کیک و دسرهای کوچک</p>
+        <a href="cap.html"><button>مشاهده محصولات</button></a>
+    </div>
+    <div class="product-card">
+        <div class="product-icon">🍪</div>
+        <h3>ظروف کوکی و شکلات</h3>
+        <p>بسته‌بندی مخصوص کوکی، شکلات و شیرینی‌های تزیینی</p>
+        <a href="cooki.html"><button>مشاهده محصولات</button></a>
+    </div>
+</div>
+</section>
+<section class="about-section" id="about">
+    <div class="about-content">
+        <h2 style="text-align: center;color: #2c3e50;font-size: 2rem;font-weight: 700;margin-bottom: 2rem;">درباره ما</h2>
+        <p style="font-size: 1.05rem;color: #555;line-height: 1.9;margin-bottom: 1.5rem;text-align: justify;">کارخانه پک پلاست با بیش از ۱۵ سال سابقه در تولید ظروف پلاستیکی تخصصی، یکی از پیشگامان صنعت بسته‌بندی مواد غذایی در کشور است. ما با بهره‌گیری از جدیدترین تکنولوژی‌های روز دنیا و تیمی مجرب، ظروفی با بالاترین کیفیت و استانداردهای بهداشتی تولید می‌کنیم.</p>
+        <p style="font-size: 1.05rem;color: #555;line-height: 1.9;margin-bottom: 1.5rem;text-align: justify;">تمامی محصولات ما دارای مجوزهای لازم از سازمان غذا و دارو و استاندارد ملی ایران بوده و از مواد اولیه درجه یک و بهداشتی استفاده می‌شود. هدف ما ارائه بهترین کیفیت با قیمت مناسب و خدمات پس از فروش عالی است.</p>
+        <div class="certifications">
+            <div class="cert-badge">✓ مجوز سازمان غذا و دارو</div>
+            <div class="cert-badge">✓ استاندارد ملی ایران</div>
+            <div class="cert-badge">✓ گواهی بهداشت</div>
+        </div>
+    </div>
+</section>
+<section class="contact-section" id="contact">
+    <div class="contact-content" style="margin: 0 auto;max-width: 900px;">
+        <h2 style="font-size: 2rem;font-weight: 700;color: #2c3e50;margin-bottom: 2rem;text-align: center;">تماس با ما</h2>
+        <form action="" class="contact-form">
+            <div class="form-group" style="margin-bottom: 2.5rem;">
+                <label for="name">نام و نام خانوادگی</label>
+                <input type="text" name="" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">شماره تماس</label>
+                <input type="tel" id="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="email">ایمیل</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">پیام شما</label>
+                <textarea name="" id="message" required style="height: 120px;min-height: 120px;resize: vertical;width: 100%;"></textarea>
+            </div>
+            <input type="submit" class="submit-button" value="ارسال پیام">
+        </form>
+    </div>
+</section>
+
+
+
+
+    
+</body>
+</html>
